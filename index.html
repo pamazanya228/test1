@@ -78,7 +78,7 @@
             <form action="main.php" class="form" method="POST">
                 <div class="form-inputs">
                     <div class="input-area">
-                        <input type="text" placeholder="Full name"  class="form-input"  name = "Name" required>
+                        <input id="text" type="text" placeholder="Full name"  class="form-input"  name = "Name" required>
                     </div>
                     <div class="input-area">
                         <input type="text" placeholder="Email address"   class="form-input"  name="email" required>
@@ -146,5 +146,14 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 <script src="./script.js"></script>
+<script>
+var txt=document.getElementById("text");
+txt.value=sessionStorage["txt"] || "?";
+//вызывается при клике на кнопку
+window.go=function(){
+         sessionStorage["txt"]=txt.value;
+}
+</script>
 </body>
 </html>
+
